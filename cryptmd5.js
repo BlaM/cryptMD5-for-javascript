@@ -47,7 +47,7 @@ exports.cryptMD5 = function(pw, salt) {
     ctx1.update(pw);
 	ctx1.update(sp);
 	ctx1.update(pw);
-	var fin = ctx1.digest();
+	var fin = ctx1.digest("binary");
 
 	for(var i = 0; i < pw.length ; i++) {
 		ctx.update(fin.substr(i % 16, 1));
@@ -62,7 +62,7 @@ exports.cryptMD5 = function(pw, salt) {
 		ctx.update ( (i & 1) ? "\x00" : pw[0] );
 	}
 
-	fin = ctx.digest();
+	fin = ctx.digest("binary");
 
 	// and now, just to make sure things don't run too fast
     for (var i = 0; i < 1000; i++) {
@@ -88,7 +88,7 @@ exports.cryptMD5 = function(pw, salt) {
             ctx1.update(pw);
 		}
 
-        fin = ctx1.digest()
+        fin = ctx1.digest("binary")
 	}
 
 	return magic + sp + '$' + to64(fin);
