@@ -4,7 +4,7 @@
   "description": "Create MD5 hashed crypt passwords ($1$salt$hash.value/)",
   "author": {
 	"name": "Dominik Deobald",
-	"email": "dominik.deobald@interdose.com",
+	"email": "npm@dominik-deobald.de",
 	"url": "http://blog.deobald.org"
   },
   "dependencies": {
