@@ -8,7 +8,7 @@
 	"url": "http://blog.deobald.org"
   },
   "dependencies": {
-    "crypto": ">= 3.0.3",
+    "crypto": ">= 3.0.3"
   },
   "engine": ">= node 0.10.5"
 }
