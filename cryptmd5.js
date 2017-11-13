@@ -50,7 +50,7 @@ exports.cryptMD5 = function(pw, salt) {
 	var fin = ctx1.digest("binary");
 
 	for(var i = 0; i < pw.length ; i++) {
-		ctx.update(fin.substr(i % 16, 1));
+		ctx.update(fin.substr(i % 16, 1),'binary');
 	}
 
 	// Then something really weird...
@@ -71,7 +71,7 @@ exports.cryptMD5 = function(pw, salt) {
         if (i & 1) {
             ctx1.update(pw);
         } else {
-            ctx1.update(fin);
+            ctx1.update(fin,'binary');
 		}
 
         if (i % 3) {
@@ -83,7 +83,7 @@ exports.cryptMD5 = function(pw, salt) {
 		}
 
         if (i & 1) {
-            ctx1.update(fin);
+            ctx1.update(fin,'binary');
         } else {
             ctx1.update(pw);
 		}
